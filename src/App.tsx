@@ -1,17 +1,15 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name:'App',
+  name: 'App',
   setup() {
-    let x = ref(1)
+    const x = ref(1)
     return {
-        x
+      x
     }
   },
-  render(){
-    let { x } = this 
-    return (
-        <div>Hello World {x}</div>
-    )
+  render() {
+    const { x } = this
+    return <div>Hello World {x}</div>
   }
 })
