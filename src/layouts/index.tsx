@@ -15,12 +15,11 @@
  * limitations under the License.
  */
 
-import { defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import { useMessage } from 'naive-ui'
-import { useRoute } from 'vue-router'
 
 const Layout = defineComponent({
-  name: 'Layout',
+  name: 'MainLayout',
   setup() {
     window.$message = useMessage()
 

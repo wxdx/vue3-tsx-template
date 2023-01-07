@@ -1,10 +1,9 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'Home',
-  setup() {
-  },
+  name: 'HomeIndex',
+  setup() {},
   render() {
-    return (<div>home</div>)
+    return <div>home</div>
   }
 })

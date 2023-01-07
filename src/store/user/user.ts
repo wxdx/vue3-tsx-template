@@ -4,7 +4,7 @@ import type { UserState } from '@/store/user/types'
 export const useUserStore = defineStore({
   id: 'user',
   state: (): UserState => ({
-    sessionId: ''
+    sessionId: '123'
   }),
   persist: true,
   getters: {
