@@ -1,15 +1,36 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, nextTick, provide } from 'vue'
+import {
+  zhCN,
+  NConfigProvider,
+  NMessageProvider
+} from 'naive-ui'
 
-export default defineComponent({
+const App = defineComponent({
   name: 'App',
   setup() {
-    const x = ref(1)
+    const isRouterAlive = ref(true)
+    /*refresh page when router params change*/
+    const reload = () => {
+      isRouterAlive.value = false
+      nextTick(() => {
+        isRouterAlive.value = true
+      })
+    }
+
+    provide('reload', reload)
+
     return {
-      x
+      reload,
+      isRouterAlive
     }
   },
   render() {
-    const { x } = this
-    return <div>Hello World {x}</div>
+    return (
+      <NConfigProvider style={{ width: '100%', height: '100vh' }} locale={zhCN}>
+        <NMessageProvider>{this.isRouterAlive ? <router-view /> : ''}</NMessageProvider>
+      </NConfigProvider>
+    )
   }
 })
+
+export default App
