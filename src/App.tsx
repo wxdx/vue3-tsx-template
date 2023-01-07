@@ -1,9 +1,5 @@
 import { defineComponent, ref, nextTick, provide } from 'vue'
-import {
-  zhCN,
-  NConfigProvider,
-  NMessageProvider
-} from 'naive-ui'
+import { zhCN, NConfigProvider, NMessageProvider } from 'naive-ui'
 
 const App = defineComponent({
   name: 'App',
